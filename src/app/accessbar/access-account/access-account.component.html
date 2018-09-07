@@ -1,0 +1,24 @@
+	<mat-card class="accessbar-account">
+		<mat-card-header>
+
+			<img mat-card-avatar src={{this.account.pic}} class="app-account-avatar"/>
+      <mat-card-title class="accessbar-account-name" fxShow fxHide.lt-md>{{this.account.name}}</mat-card-title>
+      <button mat-icon-button class="app-account-icon" [matMenuTriggerFor]="menu">
+        <mat-icon class="accessbar-icon">expand_more</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+		</mat-card-header>
+	</mat-card>

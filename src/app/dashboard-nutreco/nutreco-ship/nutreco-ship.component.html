@@ -1,0 +1,57 @@
+<div
+        fxLayout="row"
+        fxLayout.lt-md="column"
+        fxLayoutGap.sm="5px">
+
+    <div  class="dash-status"
+          fxFlex = "30%"
+          fxFlex.lt-md = "20%"
+          fxLayout="column"
+          fxLayoutGap.xs="5px">
+
+		<div fxLayout="column" fxLayoutGap="0px">
+		  <mat-card>
+		    <mat-card-header>
+		      <div mat-card-avatar [style.background-color]=this.color>
+		        <mat-icon></mat-icon>
+		      </div>
+		      <mat-card-title>Ship-Detection</mat-card-title>
+		    </mat-card-header>
+
+		  </mat-card>
+		</div>
+
+    </div>
+
+    <div  class="dash-graph"
+          fxFlex = "70%"
+          fxFlex.lt-md = "20%"
+          fxLayout="column"
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+					<div fxLayout="column" fxLayoutGap="0px">
+					  <mat-card>
+					    <mat-card-header>
+					      <div mat-card-avatar [style.background-color]=this.color>
+					        <mat-icon></mat-icon>
+					      </div>
+					      <mat-card-title></mat-card-title>
+					      <mat-card-subtitle></mat-card-subtitle>
+								<mat-form-field class="Check">
+									<mat-select placeholder="View Another Video" (selectionChange)="onmodelChange($event.value)">
+										<mat-option *ngFor="let model of models"  [value]="model.value">
+											{{model.viewValue}}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+								<mat-divider [vertical]="true"></mat-divider>
+								<button mat-stroked-button color="warn" id="btn_process" (click)="btn_change($event.target.value)" >Process</button>
+					    </mat-card-header>
+
+					  </mat-card>
+
+
+    </div>
+
+
+  </div>

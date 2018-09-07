@@ -1,0 +1,19 @@
+<button mat-icon-button [mdePopoverTriggerFor]="popover"
+    mdePopoverTriggerOn="click" (click)="onClick()">
+  <mat-icon class="accessbar-icon" matBadge={{badge}} matBadgeColor="warn">notifications</mat-icon>
+</button>
+
+  <mde-popover #popover [mdePopoverOverlapTrigger]="false" [mdePopoverCloseOnClick]="false">
+    <mat-card>
+      <mat-card-content>
+        <mat-list>
+          <h3 mat-subheader>Alert</h3>
+          <mat-list-item *ngFor="let alert of alerts">
+            <mat-icon mat-list-icon>{{alert.icon}}</mat-icon>
+            <h4 mat-line>{{alert.message}}</h4>
+            <p mat-line>{{alert.time}}</p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mde-popover>

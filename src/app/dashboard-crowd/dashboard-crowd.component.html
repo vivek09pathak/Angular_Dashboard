@@ -1,0 +1,92 @@
+<mat-tab-group>
+  <mat-tab label="Camera 1">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayoutGap.sm="5px">
+      <div class="cardContainer">
+
+        <div class="mmCard shadow4 shadow6h bOWhite1">
+          <iframe class="mmCardVid" src="../../assets/videos/movie1.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+          <h3>Live Camera Feed</h3>
+        </div>
+
+        <div class="mmCard shadow4 shadow6h bOWhite1">
+          <iframe class="mmCardVid" src="../../assets/videos/hm1.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+          <h3>Heat Map</h3>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayoutGap.sm="5px">
+
+      <div fxFlex="50%">
+
+        <app-dash-graph-in></app-dash-graph-in>
+
+      </div>
+
+      <!--<button mat-raised-button (click)="openDialog()">Trigger Alarm</button>-->
+      <!-- <div class="mmCard2 shadow4 shadow6h bOWhite1">
+          <h3 >Event History</h3>
+  <mat-list>
+   <mat-list-item> 1. Crowd Count exceedded at 11:00 hrs</mat-list-item>
+   <mat-list-item> 2. Crowd Count exceedded at 13:00 hrs</mat-list-item>
+  </mat-list>
+    </div> -->
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Camera 2">
+    <div class="cardContainer">
+
+      <div class="mmCard shadow4 shadow6h bOWhite1">
+        <iframe class="mmCardVid" src="movie2.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+        <h3>Live Camera Feed</h3>
+      </div>
+
+      <div class="mmCard shadow4 shadow6h bOWhite1">
+        <iframe class="mmCardVid" src="hm2.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+        <h3>Haet Map</h3>
+      </div>
+      <div class="dash-graph">
+
+        <app-dash-graph-in></app-dash-graph-in>
+
+      </div>
+      <!--<button mat-raised-button (click)="openDialog()">Trigger Alarm</button>-->
+      <!-- <div class="mmCard2 shadow4 shadow6h bOWhite1">
+        <h3 >Event History</h3>
+<mat-list>
+ <mat-list-item> 1. Crowd Count exceedded at 10:00 hrs</mat-list-item>
+ <mat-list-item> 2. Crowd Count exceedded at 12:00 hrs</mat-list-item>
+</mat-list>
+  </div> -->
+    </div>
+  </mat-tab>
+  <mat-tab label="Camera 3">
+    <div class="cardContainer">
+
+      <div class="mmCard shadow4 shadow6h bOWhite1">
+        <iframe class="mmCardVid" src="movie3.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+        <h3>Live Camera Feed</h3>
+      </div>
+
+      <div class="mmCard shadow4 shadow6h bOWhite1">
+        <iframe class="mmCardVid" src="hm3.mp4" allowfullscreen loop=1 autoplay=1></iframe>
+        <h3>Heat Map</h3>
+      </div>
+      <div class="dash-graph">
+        <!-- fxFlex="70%" fxFlex.lt-md="30%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px"> -->
+
+        <app-dash-graph-in></app-dash-graph-in>
+
+      </div>
+      <!--<button mat-raised-button (click)="openDialog()">Trigger Alarm</button>-->
+      <!-- <div class="mmCard2 shadow4 shadow6h bOWhite1">
+          <h3 >Event History</h3>
+  <mat-list>
+   <mat-list-item> 1. Crowd Count exceedded at 09:00 hrs</mat-list-item>
+   <mat-list-item> 2. Crowd Count exceedded at 11:00 hrs</mat-list-item>
+  </mat-list>
+    </div> -->
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

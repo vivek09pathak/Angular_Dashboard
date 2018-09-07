@@ -1,0 +1,21 @@
+<div style="display: table-cell; vertical-align: middle;   " fxLayout="column" fxLayoutGap="0px">
+	<mat-card>
+    <mat-card-title>
+      Events
+    </mat-card-title>
+		<mat-card-content style="height: 310px;">
+      <ngx-charts-gauge
+        [scheme]="colorScheme"
+        [results]="data"
+        [min]="0"
+        [max]="10"
+        [angleSpan]="340"
+        [startAngle]="-170"
+        [units]="'Events'"
+        [bigSegments]="10"
+        [smallSegments]="5"
+        (select)="onSelect($event)">
+      </ngx-charts-gauge>
+		</mat-card-content>
+	</mat-card>
+</div>

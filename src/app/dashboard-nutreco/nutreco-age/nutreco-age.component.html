@@ -1,0 +1,23 @@
+<div style="display: table-cell; vertical-align: middle;   " fxLayout="column" fxLayoutGap="0px">
+	<mat-card>
+		<mat-card-content style="height: 270px;">
+      <ngx-charts-area-chart
+      [curve]="curve"
+      [animations]="true"
+      [scheme]="colorScheme"
+      [results]="single_1"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      [timeline]="timeline"
+      (select)="onSelect($event)">
+    </ngx-charts-area-chart>
+		</mat-card-content>
+	</mat-card>
+</div>

@@ -1,0 +1,8 @@
+<button mat-menu-item fxShow fxHide.lt-md fxLayoutAlign="center center" (click)="act()">
+  <mat-icon color class="accessbar-icon">{{ icon }}</mat-icon>
+  <span class="accessbar-label">{{ label }}</span>
+</button>
+
+<button mat-icon-button fxHide fxShow.lt-md fxLayoutAlign="center center" (click)="clickCallback()" matTooltip="{{ label }}">
+  <mat-icon color class="accessbar-icon">{{ icon }}</mat-icon>
+</button>

@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-toolbar  class="accessbar-toolbar" color='primary'>
+  <mat-toolbar-row>
+
+    <div fxLayoutAlign="start stretch" fxLayoutGap="8px">
+      <app-access-item fxHide fxShow.lt-sm [label]="''" [icon]="'menu'" [clickCallback]="toggleCallback"></app-access-item>  
+    </div>
+
+    <div fxShow fxHide.lt-xs class="accessbar-label">        
+      SecureIt - Desk  
+    </div>
+
+   	<!-- <span class="accessbar-gap"></span> -->
+
+    <div fxLayoutAlign="start stretch" fxLayoutGap="8px" fxShow fxHide.lt-sm>  
+      <!-- <mat-divider [vertical]="true"></mat-divider>     -->
+      <app-access-item [label]="'Dashboard'" [icon]="'dashboard'" routerLink="/dashboard"></app-access-item>
+      <mat-divider [vertical]="true"></mat-divider>    
+      <app-access-item [label]="'Queue Management'" [icon]="'event'" routerLink="/dashboard/airport"></app-access-item>
+      <mat-divider [vertical]="true"></mat-divider>    
+      <app-access-item [label]="'Detection'" [icon]="'bug_report'" routerLink="/dashboard/detection"></app-access-item>
+      <mat-divider [vertical]="true"></mat-divider>    
+      <app-access-item [label]="'Crowd Count'" [icon]="'event'" routerLink="/dashboard/crowd"></app-access-item>      
+      <mat-divider [vertical]="true"></mat-divider>    
+      <app-access-item [label]="'Nutreco'" [icon]="'event'" routerLink="/dashboard/nutreco"></app-access-item>      
+      <mat-divider [vertical]="true"></mat-divider>   
+    </div>
+    
+    <span class="accessbar-gap"></span>
+    
+    <app-access-alert></app-access-alert>
+    <!-- <app-access-icon [label]="'Messages'" [icon]="'message'"></app-access-icon> -->
+
+    <mat-divider [vertical]="true"></mat-divider>    
+    <mat-divider [vertical]="true"></mat-divider>    
+    <mat-divider [vertical]="true"></mat-divider>  
+    <mat-divider [vertical]="true"></mat-divider>    
+    <mat-divider [vertical]="true"></mat-divider>   
+
+    <app-access-account fxShow fxHide.lt-sm></app-access-account>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+

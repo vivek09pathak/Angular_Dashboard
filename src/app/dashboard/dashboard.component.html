@@ -1,0 +1,95 @@
+<!-- <div            
+      fxLayout="column"
+      fxLayoutGap="10px"
+      fxLayoutGap.xs="5px"> -->
+  
+  <div       
+        fxLayout="row" 
+        fxLayout.lt-md="column"
+        fxLayoutGap="10px"
+        fxLayoutGap.sm="5px">        
+
+    <div  class="dash-status"    
+          fxFlex = "30%" 
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+      <app-dash-status [icon]="'videocam'" [label]="'Cameras Online'" [color]="'#4caf50'"></app-dash-status>
+      <app-dash-status [icon]="'face'" [label]="'Under Surveillance'" [color]="'#9c27b0'"></app-dash-status>
+      <app-dash-status [icon]="'supervisor_account'" [label]="'Officers Active'" [color]="'#ff5722'"></app-dash-status>
+      
+    </div>
+
+    <div  class="dash-graph"  
+          fxFlex = "70%"
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+          <app-dash-graph></app-dash-graph>
+          
+    </div>
+
+
+  </div>
+
+  <div
+        fxLayout="row" 
+        fxLayout.lt-md="column"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="5px">      
+
+    <div  class="dash-bar-chart"  
+          fxFlex = "30%" 
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+          <app-dash-bar-chart></app-dash-bar-chart>
+    </div>
+        <div  class="dash-bar-chart"  
+          fxFlex = "30%" 
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+          <app-dash-gauge></app-dash-gauge>
+    </div>
+    <div  class="dash-bar-chart"  
+          fxFlex = "40%" 
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+          <app-dash-piegrid></app-dash-piegrid>
+    </div>
+  </div>
+
+    <!-- <div
+        fxLayout="row" 
+        fxLayout.lt-md="column"
+        fxLayoutGap="10px"
+        fxLayoutGap.xs="5px">      
+
+        <div  class="dash-graph"  
+          fxFlex = "30%"
+          fxFlex.lt-md = "30%"     
+          fxLayout="column" 
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="5px">
+
+          <app-dash-donut></app-dash-donut>
+          
+    </div>
+        
+  </div> -->
+
+
+<!-- </div> -->
+

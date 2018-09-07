@@ -1,0 +1,29 @@
+<div style="display: table-cell; vertical-align: middle;   " fxLayout="column" fxLayoutGap="0px">
+	<mat-card>
+    <mat-card-title>
+      Crowd Load On Terminals (Live)
+    </mat-card-title>
+		<mat-card-content style="height: 300px;">
+			<!-- <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType"
+			 (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+			</canvas> -->
+      <ngx-charts-area-chart
+      [curve]="curve"
+      [animations]="true"
+      [scheme]="colorScheme"
+      [results]="single_1"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      [timeline]="timeline"
+      (select)="onSelect($event)" >
+    </ngx-charts-area-chart>
+		</mat-card-content>
+	</mat-card>
+</div>

@@ -1,0 +1,28 @@
+.mat-card{
+  padding-bottom:5px;
+  height: 75px;
+
+}
+
+.mat-card-avatar{
+  display: table; 
+  text-align: center; 
+  padding:5px;
+}
+
+.mat-icon{
+  display: table-cell; 
+  vertical-align: middle; 
+  color:whitesmoke; 
+  font-size:30px;
+}
+
+.mat-card-title{
+  font-size:20px;
+  /* font-family: "Arial Narrow", Helvetica, sans-serif; */
+  font-weight: bolder;
+}
+
+.mat-card-subtitle{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}

@@ -1,0 +1,70 @@
+.dash-status{
+  /* background-color:whitesmoke;  */
+  padding:10px;
+}
+
+.dash-graph{
+  /* background-color:whitesmoke;  */
+  padding:10px;
+  /* display: table; */
+}
+.dash-graph2{
+  /* background-color:whitesmoke;  */
+  padding:10px;
+  padding-top:300px;
+  /* display: table; */
+}
+
+
+.dash-bar-chart{
+  /* background-color:whitesmoke;  */
+  padding:10px;
+  padding-top:100px;
+  /* display: table; */
+}
+
+.mat-card{
+  padding-bottom:15px;
+  height: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+
+}
+
+.mat-card-avatar{
+  display: table;
+  text-align: center;
+  padding:5px;
+}
+
+.mat-icon{
+  display: table-cell;
+  vertical-align: middle;
+  color:whitesmoke;
+  font-size:30px;
+}
+
+.mat-card-title{
+  font-size:24px;
+  /* font-family: "Arial Narrow", Helvetica, sans-serif; */
+  font-weight: bolder;
+  margin-bottom: 8px
+
+}
+
+.mat-card-subtitle{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.mat-form-field-infix{
+  padding-top: 0px;
+  padding-bottom: 8px;
+  border-top-width: 0px;
+}
+
+.mat-stroked-button {
+  border: 1px solid currentColor;
+  padding: 0 15px;
+  line-height: 34px;
+  height: 32px;
+}
