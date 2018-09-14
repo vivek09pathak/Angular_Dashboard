@@ -1,0 +1,122 @@
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+
+  <div class="dash-status" fxFlex="30%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap.xs="5px">
+
+    <div fxLayout="column" fxLayoutGap="0px">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar [style.background-color]=this.color>
+            <mat-icon></mat-icon>
+          </div>
+          <mat-card-title>Age-Detection</mat-card-title>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+
+  </div>
+
+  <div class="dash-graph" fxFlex="70%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+    <div fxLayout="column" fxLayoutGap="0px">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar [style.background-color]=this.color>
+            <mat-icon></mat-icon>
+          </div>
+          <mat-form-field class="Check" style="margin-top: -13.5px">
+            <mat-select placeholder="View Another Video" (selectionChange)="onmodelChange($event.value)">
+              <mat-option *ngFor="let model of models" [value]="model.value">
+                {{model.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-stroked-button color="warn" id="btn_process" (click)="btn_change($event.target.value)">Process</button>
+        </mat-card-header>
+
+      </mat-card>
+
+
+    </div>
+
+
+  </div>
+</div>
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+  <div class="dash-graph" fxFlex="70%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+    <div *ngIf="hide1">
+      <div fxLayout="column" fxLayoutGap="0px">
+        <mat-card style="height:500px">
+          <mat-card-header>
+            <div mat-card-avatar [style.background-color]=this.color>
+              <mat-icon></mat-icon>
+            </div>
+            <mat-card-title>Input Video</mat-card-title>
+            <vg-player preload="auto">
+              <vg-controls>
+                <vg-time-display [vgFor]="singleVideo" [vgProperty]="'left'" [vgFormat]="'mm:ss'"></vg-time-display>
+
+                <vg-scrub-bar [vgFor]="singleVideo">
+                </vg-scrub-bar>
+              </vg-controls>
+              <video width="1080" height="500" [vgMedia]="media" #media [src]="'./src/assets/'+result" id="singleVideo" preload="auto"
+                controls autoplay>
+
+              </video>
+            </vg-player>
+          </mat-card-header>
+
+        </mat-card>
+      </div>
+    </div>
+    <div *ngIf="hide2">
+      <div fxLayout="column" fxLayoutGap="0px">
+        <mat-card style="height:500px">
+          <mat-card-header>
+            <div mat-card-avatar [style.background-color]=this.color>
+              <mat-icon></mat-icon>
+            </div>
+            <mat-card-title>Output Video</mat-card-title>
+            <vg-player preload="auto">
+              <vg-controls>
+                <vg-time-display [vgFor]="singleVideo" [vgProperty]="'left'" [vgFormat]="'mm:ss'"></vg-time-display>
+
+                <vg-scrub-bar [vgFor]="singleVideo">
+                </vg-scrub-bar>
+              </vg-controls>
+              <video width="1080" height="500" [vgMedia]="media" #media [src]="'./src/assets/'+result" id="singleVideo" preload="auto"
+                controls autoplay>
+
+              </video>
+            </vg-player>
+          </mat-card-header>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="dash-status" fxFlex="30%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap.xs="5px">
+
+      <div fxLayout="column" fxLayoutGap="0px">
+          <div *ngIf="hide3">
+        <!-- <app-dash-graph></app-dash-graph> -->
+          </div>
+      </div>
+  
+    </div>
+</div>
+
+
+<!-- <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+  <div class="dash-graph" fxFlex="70%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px"> -->
+    <!-- <div *ngIf="hide3"> -->
+      <!-- <div class="dash-graph"> -->
+      <!-- fxFlex="70%" fxFlex.lt-md="30%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px"> -->
+
+
+      
+
+    <!-- </div> -->
+
+    <!-- </div> -->
+  <!-- </div>
+</div> -->

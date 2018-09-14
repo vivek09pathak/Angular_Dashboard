@@ -1,0 +1,160 @@
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+
+	<div class="dash-status" fxFlex="30%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap.xs="5px">
+
+		<div fxLayout="column" fxLayoutGap="0px">
+			<mat-card>
+				<mat-card-header>
+					<div mat-card-avatar [style.background-color]=this.color>
+						<mat-icon></mat-icon>
+					</div>
+					<mat-card-title>Ship-Detection</mat-card-title>
+				</mat-card-header>
+
+			</mat-card>
+		</div>
+
+	</div>
+	<div class="dash-graph" fxFlex="70%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+		<div fxLayout="column" fxLayoutGap="0px">
+			<mat-card>
+				<mat-card-header>
+					<div mat-card-avatar [style.background-color]=this.color>
+						<mat-icon></mat-icon>
+					</div>
+					<mat-form-field class="Check" style="margin-top: -13.5px">
+						<mat-select placeholder="View Another Video" (selectionChange)="onmodelChange($event.value)">
+							<mat-option *ngFor="let model of models" [value]="model.value">
+								{{model.viewValue}}
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+					<button mat-stroked-button color="warn" id="btn_process" (click)="btn_change($event.target.value)">Process</button>
+				</mat-card-header>
+
+			</mat-card>
+
+
+		</div>
+
+
+	</div>
+
+</div>
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+	<div class="dash-graph" fxFlex="60%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+		<div *ngIf="hide1">
+			<div fxLayout="column" fxLayoutGap="0px">
+				<mat-card style="height:500px">
+					<mat-card-header>
+						<div mat-card-avatar [style.background-color]=this.color>
+							<mat-icon></mat-icon>
+						</div>
+						<mat-card-title>Input Video</mat-card-title>
+
+					</mat-card-header>
+					<vg-player preload="auto">
+						<vg-controls>
+							<vg-time-display [vgFor]="singleVideo" [vgProperty]="'left'" [vgFormat]="'mm:ss'"></vg-time-display>
+
+							<vg-scrub-bar [vgFor]="singleVideo">
+							</vg-scrub-bar>
+						</vg-controls>
+						<video width="1080" height="500" [vgMedia]="media" #media [src]="'/assets/videos/'+result" id="singleVideo"
+						 preload="auto" controls autoplay>
+
+						</video>
+					</vg-player>
+
+
+				</mat-card>
+			</div>
+		</div>
+		<div *ngIf="value_progress >-1 && value_progress < 100 && hide2">
+			<div fxLayout="column" fxLayoutGap="0px">
+
+				<mat-card>
+					<mat-card-header>
+						<div mat-card-avatar [style.background-color]=this.color>
+							<mat-icon></mat-icon>
+						</div>
+						<mat-card-title>Processing</mat-card-title>
+
+
+					</mat-card-header>
+					<mat-progress-bar mode="determinate" [value]="this.value_progress"></mat-progress-bar>
+				</mat-card>
+			</div>
+		</div>
+		<div *ngIf="value_progress>=100 && hide5">
+			<div fxLayout="column" fxLayoutGap="0px">
+
+				<mat-card style="height:500px">
+					<mat-card-header>
+						<div mat-card-avatar [style.background-color]=this.color>
+							<mat-icon></mat-icon>
+						</div>
+						<mat-card-title>Output Video</mat-card-title>
+						<vg-player preload="auto">
+							<vg-controls>
+								<vg-time-display [vgFor]="singleVideo" [vgProperty]="'left'" [vgFormat]="'mm:ss'"></vg-time-display>
+
+								<vg-scrub-bar [vgFor]="singleVideo">
+								</vg-scrub-bar>
+							</vg-controls>
+							<video width="1080" height="500" [vgMedia]="media" #media [src]="'http://localhost:5000/stream_data'" url id="singleVideo"
+							 preload="auto" controls autoplay>
+							</video>
+						</vg-player>
+						<!-- <iframe src="http://localhost:5000/stream_data"></iframe> -->
+					</mat-card-header>
+
+
+				</mat-card>
+			</div>
+		</div>
+	</div>
+	<div class="dash-status" fxFlex="40%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap.xs="5px">
+
+		<div fxLayout="column" fxLayoutGap="0px">
+			<div *ngIf="value_progress>=100 && hide4">
+				<!-- <div>
+								<div style="display: table-cell; vertical-align: middle;   " fxLayout="column" fxLayoutGap="0px">
+										<mat-card>
+											<mat-card-content style="height: 270px;">
+									<ngx-charts-line-chart
+												[curve]="curve"
+												[animations]="true"
+												[scheme]="colorScheme"
+												[results]="data_val"
+												[gradient]="gradient"
+												[xAxis]="showXAxis"
+												[yAxis]="showYAxis"
+												[legend]="showLegend"
+												[showXAxisLabel]="showXAxisLabel"
+												[showYAxisLabel]="showYAxisLabel"
+												[xAxisLabel]="xAxisLabel"
+												[yAxisLabel]="yAxisLabel"
+												[autoScale]="autoScale"
+												[timeline]="timeline">
+											</ngx-charts-line-chart>
+										</mat-card-content>
+									</mat-card>
+									</div>
+						</div> -->
+			</div>
+
+		</div>
+	</div>
+	<!-- <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.sm="5px">
+		<div class="dash-graph" fxFlex="70%" fxFlex.lt-md="20%" fxLayout="column" fxLayoutGap="10px" fxLayoutGap.xs="5px">
+		  <div fxLayout="column" fxLayoutGap="0px">
+			<app-graph-chart></app-graph-chart>
+	  
+	  
+		  </div>
+	  
+	  
+		</div>
+	  
+	  </div> -->
